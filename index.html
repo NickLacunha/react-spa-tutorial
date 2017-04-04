@@ -90,12 +90,12 @@ ul.header li a {
         <div>
             <h1>Simple SPA</h1>
             <ul className="header">
-                <li>Home</li>
-                <li>Stuff</li>
-                <li>Contact</li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/stuff">Stuff</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
             </ul>
             <div className="content">
-                <Home/>
+                {this.props.children}
             </div>
         </div>
         )
@@ -104,7 +104,9 @@ ul.header li a {
 
         ReactDOM.render(
         <Router history={ReactRouter.hashHistory}>
-            <Route path="/" component={App}></Route>
+            <Route path="/" component={App}>
+                <IndexRoute component={Home}/>
+            </Route>
         </Router>,
         destination
         );
