@@ -52,6 +52,14 @@ ul.header li a {
     </div>
 
     <script type="text/babel">
+
+        var { Router,
+        Route,
+        IndexRoute,
+        IndexLink,
+        hashHistory,
+        Link } = ReactRouter;
+
         var destination = document.querySelector("#container");
 
         // home componenet
@@ -95,9 +103,9 @@ ul.header li a {
         });
 
         ReactDOM.render(
-        <ReactRouter.Router history={ReactRouter.hashHistory}>
-            <ReactRouter.Route path="/" component={App}></ReactRouter.Route>
-        </ReactRouter.Router>,
+        <Router history={ReactRouter.hashHistory}>
+            <Route path="/" component={App}></Route>
+        </Router>,
         destination
         );
     </script>
